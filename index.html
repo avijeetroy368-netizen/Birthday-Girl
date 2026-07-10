@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,12 +16,23 @@
 <body>
 
 <!-- Loader -->
+
 <div id="loader">
+
 <h1>🎁 A Little Surprise ❤️</h1>
+
 <p>Loading your special day...</p>
+
 </div>
 
+<!-- Background Music -->
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <!-- Hero -->
+
 <section id="hero">
 
 <div class="hero-content">
@@ -43,6 +55,7 @@ Open Your Surprise 🎁
 </section>
 
 <!-- Gallery -->
+
 <section id="gallery">
 
 <img src="images/photo1.jpg" class="slide active" alt="Photo 1">
@@ -56,6 +69,7 @@ Open Your Surprise 🎁
 </section>
 
 <!-- Message -->
+
 <section id="message">
 
 <div class="card">
@@ -69,6 +83,7 @@ Open Your Surprise 🎁
 </section>
 
 <!-- Final -->
+
 <section id="final">
 
 <h1>Happy Birthday ❤️</h1>
@@ -83,19 +98,22 @@ Stay happy forever.<br><br>
 
 With Best Wishes ❤️<br>
 
-<b>— Avijeet</b>
+<b>— Avijeet ❤️</b>
 
 </p>
 
 <br>
 
 <button id="letterBtn">
+
 Open My Letter 💌
+
 </button>
 
 </section>
 
 <!-- Letter -->
+
 <div id="letter" class="hidden">
 
 <div class="letterBox">
@@ -117,12 +135,26 @@ Happy Birthday once again ❤️
 </p>
 
 <button onclick="closeLetter()">
+
 Close ❤️
+
 </button>
 
 </div>
 
 </div>
+
+<script>
+document.getElementById("startBtn").addEventListener("click", function(){
+
+    const music=document.getElementById("bgMusic");
+
+    music.volume=0.5;
+
+    music.play();
+
+});
+</script>
 
 <script src="script.js"></script>
 
