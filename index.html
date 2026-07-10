@@ -15,6 +15,16 @@
 
 <body>
 
+<!-- Cinematic Intro -->
+
+<div id="intro">
+
+<h1>A Special Surprise ❤️</h1>
+
+<p>For Someone Truly Special...</p>
+
+</div>
+
 <!-- Loader -->
 
 <div id="loader">
@@ -151,7 +161,7 @@ document.getElementById("startBtn").addEventListener("click", function(){
 
     music.volume=0.5;
 
-    music.play();
+    music.play().catch(err => console.log(err));
 
 });
 </script>
