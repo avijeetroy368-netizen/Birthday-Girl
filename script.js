@@ -39,16 +39,31 @@ function typeWriter() {
     }
 }
 
+// ---------------- Start Button ----------------
+
 document.getElementById("startBtn").onclick = function () {
+
     document.getElementById("gallery").scrollIntoView({
         behavior: "smooth"
     });
+
+    // Background Music
+    const music = document.getElementById("bgMusic");
+
+    if (music) {
+        music.volume = 0.5;
+
+        music.play().catch(error => {
+            console.log(error);
+        });
+    }
 
     if (i === 0) {
         typeWriter();
     }
 
     playVoice();
+
 };
 
 // ---------------- Slider ----------------
@@ -63,9 +78,7 @@ setInterval(() => {
     index++;
 
     if(index >= slides.length){
-
         index = 0;
-
     }
 
     slides[index].classList.add("active");
@@ -74,15 +87,15 @@ setInterval(() => {
 
 // ---------------- Letter ----------------
 
-document.getElementById("letterBtn").onclick=function(){
+document.getElementById("letterBtn").onclick = function(){
 
-document.getElementById("letter").classList.remove("hidden");
+    document.getElementById("letter").classList.remove("hidden");
 
 }
 
 function closeLetter(){
 
-document.getElementById("letter").classList.add("hidden");
+    document.getElementById("letter").classList.add("hidden");
 
 }
 
@@ -90,31 +103,31 @@ document.getElementById("letter").classList.add("hidden");
 
 setInterval(()=>{
 
-let heart=document.createElement("div");
+    let heart=document.createElement("div");
 
-heart.innerHTML="❤️";
+    heart.innerHTML="❤️";
 
-heart.style.position="fixed";
+    heart.style.position="fixed";
 
-heart.style.left=Math.random()*100+"vw";
+    heart.style.left=Math.random()*100+"vw";
 
-heart.style.bottom="-20px";
+    heart.style.bottom="-20px";
 
-heart.style.fontSize=(20+Math.random()*20)+"px";
+    heart.style.fontSize=(20+Math.random()*20)+"px";
 
-heart.style.animation="floatHeart 6s linear";
+    heart.style.animation="floatHeart 6s linear";
 
-document.body.appendChild(heart);
+    document.body.appendChild(heart);
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-heart.remove();
+        heart.remove();
 
-},6000);
+    },6000);
 
 },800);
 
-// ---------------- Animation ----------------
+// ---------------- Heart Animation ----------------
 
 const style=document.createElement("style");
 
@@ -123,19 +136,13 @@ style.innerHTML=`
 @keyframes floatHeart{
 
 0%{
-
 transform:translateY(0);
-
 opacity:1;
-
 }
 
 100%{
-
 transform:translateY(-110vh);
-
 opacity:0;
-
 }
 
 }
